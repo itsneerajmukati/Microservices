@@ -1,10 +1,24 @@
 package com.demo.usermanagement.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 	
-	Integer id;
-	String name;
-	String port;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id")
+	private Integer id;
+	
+	@Column(name="first_name")
+	private String firstName;
+	
+	@Column(name="last_name")
+	private String lastName; 
 	
 	public Integer getId() {
 		return id;
@@ -12,24 +26,16 @@ public class User {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	
-	public String getPort() {
-		return port;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setPort(String port) {
-		this.port = port;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public User(Integer id, String name,String port) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.port = port;
-	}
-	
 }

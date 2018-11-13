@@ -1,22 +1,23 @@
 package com.demo.usermanagement.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.usermanagement.model.User;
+import com.demo.usermanagement.service.UserService;
 
 @RestController
 public class UserRest {
 	
 	@Autowired
-	private Environment environment;
+	private UserService userService;
 	
 	@RequestMapping(method = RequestMethod.GET, name="/getUser")
-	public User getUser() {
-		return new User(101, "test",environment.getProperty("local.server.port"));
+	public User getUser(@RequestParam(value = "name") String name) {
+		return userService.getUserByName(name);
 	}
 	
 }
