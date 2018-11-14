@@ -2,46 +2,26 @@ package com.demo.cart.model;
 
 public class Cart {
 	
-	Integer id;
-	String item;
-	String name;
-	String port;
+	private String items;
+	private UserInfo userInfo;
 	
-	public Integer getId() {
-		return id;
+	public String getItems() {
+		return items;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setItems(String items) {
+		this.items = items;
 	}
-	public String getItem() {
-		return item;
+	public UserInfo getUserInfo() {
+		return userInfo;
 	}
-	public void setItem(String item) {
-		this.item = item;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUserInfo(UserInfo userInfo) {
+		this.userInfo = userInfo;
 	}
 	
-	public String getPort() {
-		return port;
-	}
-	public void setPort(String port) {
-		this.port = port;
-	}
-	public Cart() {
-		
-	}
-	public Cart(Integer id, String item,String name,String port) {
+	public Cart(String items, UserInfo userInfo) {
 		super();
-		this.id = id;
-		this.item = item;
-		this.name = name;
-		this.port = port;
-	} 
-	
+		this.items = items;
+		this.userInfo = userInfo;
+	}
 	
 }

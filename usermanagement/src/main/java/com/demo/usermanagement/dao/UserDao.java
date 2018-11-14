@@ -6,4 +6,6 @@ public interface UserDao {
 	
 	public User getUserByName(String name);
 
+	public User saveUser(User user);
+
 }
